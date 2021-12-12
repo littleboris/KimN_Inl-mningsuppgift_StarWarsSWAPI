@@ -1,5 +1,3 @@
-// the container for the movie boxes
-
 const filmsUrl = "https://swapi.dev/api/films/";
 const actorsUrl = "https://swapi.dev/api/people/";
 
@@ -9,8 +7,8 @@ async function moviesInfo() {
   const modal = document.getElementById("modal");
   // modal-content
   const modalContent = document.getElementById("modal-content");
-  //span button for closing
 
+  // click to close
   modal.onclick = function () {
     modal.style.display = "none";
   };
@@ -68,7 +66,7 @@ async function moviesInfo() {
     container.appendChild(movieCard);
   }
 }
-
+// This is just for fun, i added a music player from a tutorial
 moviesInfo();
 
 const musicContainer = document.querySelector(".music-container");
