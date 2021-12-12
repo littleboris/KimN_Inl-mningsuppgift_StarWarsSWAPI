@@ -1,0 +1,256 @@
+.modal-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  position: absolute;
+  top: 50%;
+}
+
+.modal-box {
+  width: 150px;
+  height: 150px;
+  flex-direction: column;
+  border: solid 3px rgba(0, 0, 0, 0);
+  align-content: flex-start;
+  justify-items: center;
+  text-align: center;
+  margin: 6px;
+  border-radius: 15% 15% 0% 0%;
+  background: rgba(0, 0, 0, 0.815);
+  color: black;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px,
+    rgba(255, 255, 255, 0.12) 0px -12px 30px,
+    rgba(255, 255, 255, 0.12) 0px 4px 6px,
+    rgba(255, 255, 255, 0.17) 0px 12px 13px,
+    rgba(255, 255, 255, 0.09) 0px -3px 5px;
+  /*animation: spin 4s linear infinite;*/
+}
+.title-text {
+  color: rgb(255, 136, 0);
+  height: 2rem;
+}
+
+.release-text {
+  margin-top: 80px;
+  font-size: larger;
+  color: rgb(255, 255, 255);
+}
+#container {
+  cursor: url("./cursors/bluesaber.png"), auto;
+}
+.modal-box:hover {
+  cursor: url("./cursors/starwars2.png"), auto;
+}
+
+.movies {
+  display: none;
+}
+
+.page-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: orange;
+  font-size: 2rem;
+}
+
+@font-face {
+  font-family: "sf_distant_galaxyregular";
+  src: url("./font/SfDistantGalaxy-0l3d.ttf") format("woff2"),
+    url("./font/SfDistantGalaxy-0l3d.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "sf_distant_galaxyregular";
+  src: url("./font/SfDistantGalaxy-0l3d.ttf") format("woff2"),
+    url("./font/SfDistantGalaxy-0l3d.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  background-image: url("./image/starwars.jpg");
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --------- Music player ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+.music-container {
+  background-color: rgba(0, 0, 0, 0.473);
+  border-radius: 15px;
+  box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
+  display: flex;
+  padding: 20px 30px;
+  position: relative;
+  margin: 100px 0;
+  z-index: 10;
+  bottom: -30%;
+}
+
+.img-container {
+  position: relative;
+  width: 110px;
+}
+
+.img-container::after {
+  content: "";
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-container img {
+  width: inherit;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  animation: rotate 5s linear infinite;
+  animation-play-state: paused;
+}
+.music-container.play .img-container img {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.action-btn {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  color: orange;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.action-btn-big {
+  color: orange;
+  font-size: 30px;
+}
+
+.action-btn-big:focus {
+  outline: 0;
+}
+
+.music-info {
+  background-color: rgba(0, 0, 0, 0.473);
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  padding: 10px 10px 10px 150px;
+  opacity: 0;
+  transform: translateY(0%);
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+.music-info h4 {
+  margin: 0;
+}
+
+.music-container.play .music-info {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+
+.progress-container {
+  background-color: rgba(0, 0, 0, 0.795);
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.progress {
+  background-color: rgb(255, 166, 0);
+  border-radius: 5px;
+  height: 100%;
+  width: 50%;
+  transition: width 0.1s linear;
+}
+
+/* MODAL WINDOW */
+
+/* The Modal (background) */
+.myModalWindow {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #000000f8;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgb(0, 0, 0);
+  width: 30%; /* Could be more or less, depending on screen size */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: orange;
+  border-radius: 25% 25% 0% 0%;
+}
+
+.modal-content:hover {
+  cursor: pointer;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

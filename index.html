@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/961d697ef8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="page-header">
+        <h1>Star Wars Fan Club</h1>
+    </header>
+    <div id="movies" class="movies"></div>
+
+    <div id="modal" class="myModalWindow">
+        <div class="modal-content" id="modal-content">
+
+        </div>
+    </div>
+    <section class="modal-container" id="container">
+
+
+
+    </section>
+
+    <div class="music-container">
+        <div class="music-info">
+            <h4 id="title-song">Music</h4>
+            <div class="progress-container">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <audio src="./music/starwarsthemeflute.mp3" id="audio"></audio>
+        <div class="img-container">
+            <img src="./image/461-4611544_vinyl-record-png-record-vinyl-transparent-png.png" alt="music-cover"
+                id="cover">
+        </div>
+        <div class="navigation">
+            <button id="prev" class="action-btn">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="./app.js" async defer></script>
+</body>
+
+</html>
